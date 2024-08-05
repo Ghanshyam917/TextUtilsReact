@@ -3,10 +3,10 @@ import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import About from './Components/About';
 import { useState } from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
+// import {
+//   createBrowserRouter,
+//   RouterProvider
+// } from "react-router-dom";
 import Alert from './Components/Alert';
 
 function App() {
@@ -34,28 +34,29 @@ function App() {
     }
   }
 
-  const router = createBrowserRouter([
+  // const router = createBrowserRouter([
    
-    {
-      path: "/",
-      element: <><Navbar mode={mode} tglMode={tglMode}/>
-      <Alert msg={msg} alert={alert}/>
-      <TextForm heading="Enter the text to analyze below" mode={mode} alert={setalert} msg={setmsg}/>
-      </>,
-    },  
-    {
-      path: "/about",
-      element: <><Navbar mode={mode} tglMode={tglMode}/>
-      <About mode={mode}/></>
-    },
-  ]);
+  //   {
+  //     path: "/",
+  //     element: <><Navbar mode={mode} tglMode={tglMode}/>
+  //     <Alert msg={msg} alert={alert}/>
+  //     <TextForm heading="Enter the text to analyze below" mode={mode} alert={setalert} msg={setmsg}/>
+  //     </>,
+  //   },  
+  //   {
+  //     path: "/about",
+  //     element: <><Navbar mode={mode} tglMode={tglMode}/>
+  //     <About mode={mode}/></>
+  //   },
+  // ]);
 
   return (
    <>
-    {/* <Navbar mode={mode} tglMode={tglMode}/>
-    <TextForm heading="Enter the text to analyze below" mode={mode}/>
-    <About/>  */}
-    <RouterProvider router={router} />
+     <Navbar mode={mode} tglMode={tglMode}/>
+    <Alert msg={msg} alert={alert}/>
+    <TextForm heading="Enter the text to analyze below" mode={mode} alert={setalert} msg={setmsg}/>
+    {/* <About/>  
+    <RouterProvider router={router} /> */}
     </>
   );
 }
