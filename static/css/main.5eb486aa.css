@@ -1,0 +1,2 @@
+body{overflow:hidden}.alert{animation:alertmsg .7s ease-in-out forwards;position:absolute;right:10px;top:10px}@keyframes alertmsg{0%{right:-500px}to{right:15px}}
+/*# sourceMappingURL=main.5eb486aa.css.map*/
