@@ -39,12 +39,12 @@ const [text,setText] = useState("");
             <h3>{props.heading}</h3>
             <textarea value={text} onChange={handleOnchange} className="form-control" style={{backgroundColor:props.mode=='light'?'white':'black',color:props.mode=='light'?'black':'white'}} id="myBox" rows="8"></textarea>
         </div>
-        <Button handleUpCase={handleUpCase} handleLwCase={handleLwCase} handleClear={handleClear} handleCopy={handleCopy}/>
+        <Button handleDisable={text.length == 0} handleUpCase={handleUpCase} handleLwCase={handleLwCase} handleClear={handleClear} handleCopy={handleCopy}/>
     </div>
     <div className="container py-2" style={{color:props.mode=='light'?'black':'white'}}>
         <h3>Your Text Summary</h3>
-        <p>{text.split(" ").length} Word and {text.length} Characters</p>
-        <p>{0.008 * text.split(" ").length} Minutes Read</p>
+        <p>{text.split(" ").filter((element)=>{return element.length != 0}).length} Word and {text.length} Characters</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length != 0}).length} Minutes Read</p>
         <h3>Preview</h3>
         <p>{text.length>0?text:'Above Text Box Preview Here....'}</p>
     </div>
